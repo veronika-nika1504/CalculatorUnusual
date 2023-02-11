@@ -9,3 +9,14 @@ E:\JOB\project\Professional\source\repos\calculator\calculator\obj\Debug\calcula
 E:\JOB\project\Professional\source\repos\calculator\calculator\obj\Debug\calculator.exe
 E:\JOB\project\Professional\source\repos\calculator\calculator\obj\Debug\calculator.pdb
 E:\JOB\project\Professional\source\repos\calculator\calculator\obj\Debug\calculator.FormCalc.resources
+E:\JOB\project\Professional\source\repos\CalculatorUnusual\calculator\bin\Debug\calculator.exe.config
+E:\JOB\project\Professional\source\repos\CalculatorUnusual\calculator\bin\Debug\calculator.exe
+E:\JOB\project\Professional\source\repos\CalculatorUnusual\calculator\bin\Debug\calculator.pdb
+E:\JOB\project\Professional\source\repos\CalculatorUnusual\calculator\obj\Debug\calculator.csproj.AssemblyReference.cache
+E:\JOB\project\Professional\source\repos\CalculatorUnusual\calculator\obj\Debug\calculator.csproj.SuggestedBindingRedirects.cache
+E:\JOB\project\Professional\source\repos\CalculatorUnusual\calculator\obj\Debug\calculator.FormCalc.resources
+E:\JOB\project\Professional\source\repos\CalculatorUnusual\calculator\obj\Debug\calculator.Properties.Resources.resources
+E:\JOB\project\Professional\source\repos\CalculatorUnusual\calculator\obj\Debug\calculator.csproj.GenerateResource.cache
+E:\JOB\project\Professional\source\repos\CalculatorUnusual\calculator\obj\Debug\calculator.csproj.CoreCompileInputs.cache
+E:\JOB\project\Professional\source\repos\CalculatorUnusual\calculator\obj\Debug\calculator.exe
+E:\JOB\project\Professional\source\repos\CalculatorUnusual\calculator\obj\Debug\calculator.pdb
