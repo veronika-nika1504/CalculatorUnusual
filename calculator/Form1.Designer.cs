@@ -698,7 +698,7 @@
             // 
             this.Mindicate.AutoSize = true;
             this.Mindicate.Font = new System.Drawing.Font("Gadugi", 17F);
-            this.Mindicate.ForeColor = System.Drawing.Color.SlateGray;
+            this.Mindicate.ForeColor = System.Drawing.Color.MidnightBlue;
             this.Mindicate.Location = new System.Drawing.Point(12, 128);
             this.Mindicate.Name = "Mindicate";
             this.Mindicate.Size = new System.Drawing.Size(33, 27);
