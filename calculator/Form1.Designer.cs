@@ -70,6 +70,8 @@
             this.Btn0 = new System.Windows.Forms.Button();
             this.BtnDesimal = new System.Windows.Forms.Button();
             this.BtnAdd = new System.Windows.Forms.Button();
+            this.Mindicate = new System.Windows.Forms.Label();
+            this.Autor = new System.Windows.Forms.TextBox();
             this.PnlTitle.SuspendLayout();
             this.PnlHistory.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -146,7 +148,7 @@
             this.RtBoxDisplayHistory.BackColor = System.Drawing.Color.PowderBlue;
             this.RtBoxDisplayHistory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.RtBoxDisplayHistory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.RtBoxDisplayHistory.ForeColor = System.Drawing.Color.Silver;
+            this.RtBoxDisplayHistory.ForeColor = System.Drawing.Color.Black;
             this.RtBoxDisplayHistory.Location = new System.Drawing.Point(0, 0);
             this.RtBoxDisplayHistory.Margin = new System.Windows.Forms.Padding(0);
             this.RtBoxDisplayHistory.Name = "RtBoxDisplayHistory";
@@ -692,11 +694,42 @@
             this.BtnAdd.UseVisualStyleBackColor = false;
             this.BtnAdd.Click += new System.EventHandler(this.BtnMathOperation_Click);
             // 
+            // Mindicate
+            // 
+            this.Mindicate.AutoSize = true;
+            this.Mindicate.Font = new System.Drawing.Font("Gadugi", 17F);
+            this.Mindicate.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.Mindicate.Location = new System.Drawing.Point(12, 128);
+            this.Mindicate.Name = "Mindicate";
+            this.Mindicate.Size = new System.Drawing.Size(33, 27);
+            this.Mindicate.TabIndex = 36;
+            this.Mindicate.Text = "M";
+            this.Mindicate.Visible = false;
+            // 
+            // Autor
+            // 
+            this.Autor.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.Autor.BackColor = System.Drawing.Color.PowderBlue;
+            this.Autor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Autor.Font = new System.Drawing.Font("Gadugi", 7.5F);
+            this.Autor.ForeColor = System.Drawing.Color.White;
+            this.Autor.Location = new System.Drawing.Point(200, 555);
+            this.Autor.Margin = new System.Windows.Forms.Padding(0);
+            this.Autor.Multiline = true;
+            this.Autor.Name = "Autor";
+            this.Autor.ReadOnly = true;
+            this.Autor.Size = new System.Drawing.Size(150, 15);
+            this.Autor.TabIndex = 37;
+            this.Autor.Text = "veronika-nika1504@yandex.ru";
+            this.Autor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // FormCalc
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(350, 570);
+            this.Controls.Add(this.Autor);
+            this.Controls.Add(this.Mindicate);
             this.Controls.Add(this.PnlHistory);
             this.Controls.Add(this.BtnAdd);
             this.Controls.Add(this.BtnDesimal);
@@ -790,6 +823,8 @@
         private System.Windows.Forms.Button Btn0;
         private System.Windows.Forms.Button BtnDesimal;
         private System.Windows.Forms.Button BtnAdd;
+        private System.Windows.Forms.Label Mindicate;
+        private System.Windows.Forms.TextBox Autor;
     }
 }
 

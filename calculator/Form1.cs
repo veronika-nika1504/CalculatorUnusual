@@ -22,7 +22,7 @@ namespace calculator
         public bool newEquals = false;
         bool enterValue = false;
         int klik = 0;
-        
+        Double memory = 0;
 
         public FormCalc()
         {
@@ -264,13 +264,26 @@ namespace calculator
 
         private void BMemory_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                  "Пока не реалиловано",
-                  "Сообщение",
-                  MessageBoxButtons.OK,
-                  MessageBoxIcon.Information,
-                  MessageBoxDefaultButton.Button1,
-                  MessageBoxOptions.DefaultDesktopOnly);
+            if (TxtDisplay.Text == string.Empty && ((Button)sender).Name != "BtnMR" && ((Button)sender).Name != "BtnMC") return;
+            switch (((Button)sender).Name)
+            {
+                case "BtnMS":
+                    memory = Double.Parse(TxtDisplay.Text);
+                    break;
+                case "BtnMC":
+                    memory = 0;
+                    break;
+                case "BtnMR":
+                    TxtDisplay.Text = memory.ToString();
+                    break;
+                case "BtnMplus":
+                    memory += Double.Parse(TxtDisplay.Text);
+                    break;
+                case "BtnMminus":
+                    memory -= Double.Parse(TxtDisplay.Text);
+                    break;
+            }
+            Mindicate.Visible = (memory != 0);
         }
 
         private void FormCalc_Load(object sender, EventArgs e)
