@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCalc));
             this.PnlTitle = new System.Windows.Forms.Panel();
             this.BtnRoll = new System.Windows.Forms.Button();
@@ -72,6 +73,7 @@
             this.BtnAdd = new System.Windows.Forms.Button();
             this.Mindicate = new System.Windows.Forms.Label();
             this.Autor = new System.Windows.Forms.TextBox();
+            this.Help = new System.Windows.Forms.ToolTip(this.components);
             this.PnlTitle.SuspendLayout();
             this.PnlHistory.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -101,6 +103,7 @@
             this.BtnRoll.Name = "BtnRoll";
             this.BtnRoll.Size = new System.Drawing.Size(50, 40);
             this.BtnRoll.TabIndex = 1;
+            this.Help.SetToolTip(this.BtnRoll, "Свернуть");
             this.BtnRoll.UseVisualStyleBackColor = false;
             this.BtnRoll.Click += new System.EventHandler(this.BtnRoll_Click);
             // 
@@ -115,6 +118,7 @@
             this.BtnTransform.Name = "BtnTransform";
             this.BtnTransform.Size = new System.Drawing.Size(50, 40);
             this.BtnTransform.TabIndex = 2;
+            this.Help.SetToolTip(this.BtnTransform, "Изменить размер");
             this.BtnTransform.UseVisualStyleBackColor = false;
             this.BtnTransform.Click += new System.EventHandler(this.BtnTransform_Click);
             // 
@@ -129,6 +133,7 @@
             this.BtnExit.Name = "BtnExit";
             this.BtnExit.Size = new System.Drawing.Size(50, 40);
             this.BtnExit.TabIndex = 3;
+            this.Help.SetToolTip(this.BtnExit, "Закрыть");
             this.BtnExit.UseVisualStyleBackColor = false;
             this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
@@ -169,6 +174,7 @@
             this.BtnClearHistory.Name = "BtnClearHistory";
             this.BtnClearHistory.Size = new System.Drawing.Size(350, 40);
             this.BtnClearHistory.TabIndex = 36;
+            this.Help.SetToolTip(this.BtnClearHistory, "Очистить историю");
             this.BtnClearHistory.UseVisualStyleBackColor = false;
             this.BtnClearHistory.Click += new System.EventHandler(this.BtnClearHistory_Click);
             // 
@@ -195,6 +201,7 @@
             this.BtnMenu.Name = "BtnMenu";
             this.BtnMenu.Size = new System.Drawing.Size(50, 40);
             this.BtnMenu.TabIndex = 4;
+            this.Help.SetToolTip(this.BtnMenu, "Меню");
             this.BtnMenu.UseVisualStyleBackColor = false;
             this.BtnMenu.Click += new System.EventHandler(this.MenuClick);
             // 
@@ -210,6 +217,7 @@
             this.BtnHistory.Name = "BtnHistory";
             this.BtnHistory.Size = new System.Drawing.Size(50, 40);
             this.BtnHistory.TabIndex = 5;
+            this.Help.SetToolTip(this.BtnHistory, "История");
             this.BtnHistory.UseVisualStyleBackColor = false;
             this.BtnHistory.Click += new System.EventHandler(this.BtnHistory_Click);
             // 
@@ -256,6 +264,7 @@
             this.BtnBackSpace.Name = "BtnBackSpace";
             this.BtnBackSpace.Size = new System.Drawing.Size(80, 55);
             this.BtnBackSpace.TabIndex = 15;
+            this.Help.SetToolTip(this.BtnBackSpace, "Стереть последний символ");
             this.BtnBackSpace.UseVisualStyleBackColor = false;
             this.BtnBackSpace.Click += new System.EventHandler(this.BtnBackSpace_Click);
             // 
@@ -270,6 +279,7 @@
             this.BtnMS.Size = new System.Drawing.Size(50, 30);
             this.BtnMS.TabIndex = 10;
             this.BtnMS.Text = "MS";
+            this.Help.SetToolTip(this.BtnMS, "Сохранить в память");
             this.BtnMS.UseVisualStyleBackColor = false;
             this.BtnMS.Click += new System.EventHandler(this.BMemory_Click);
             // 
@@ -284,6 +294,7 @@
             this.BtnMminus.Size = new System.Drawing.Size(50, 30);
             this.BtnMminus.TabIndex = 9;
             this.BtnMminus.Text = "M-";
+            this.Help.SetToolTip(this.BtnMminus, "Из числа в памяти вычесть число, на экране");
             this.BtnMminus.UseVisualStyleBackColor = false;
             this.BtnMminus.Click += new System.EventHandler(this.BMemory_Click);
             // 
@@ -298,6 +309,7 @@
             this.BtnMplus.Size = new System.Drawing.Size(50, 30);
             this.BtnMplus.TabIndex = 8;
             this.BtnMplus.Text = "M+";
+            this.Help.SetToolTip(this.BtnMplus, "К числу в памяти прибавить число, на экране");
             this.BtnMplus.UseVisualStyleBackColor = false;
             this.BtnMplus.Click += new System.EventHandler(this.BMemory_Click);
             // 
@@ -312,6 +324,7 @@
             this.BtnMC.Size = new System.Drawing.Size(50, 30);
             this.BtnMC.TabIndex = 6;
             this.BtnMC.Text = "MC";
+            this.Help.SetToolTip(this.BtnMC, "Очистить память");
             this.BtnMC.UseVisualStyleBackColor = false;
             this.BtnMC.Click += new System.EventHandler(this.BMemory_Click);
             // 
@@ -326,6 +339,7 @@
             this.BtnMR.Size = new System.Drawing.Size(50, 30);
             this.BtnMR.TabIndex = 7;
             this.BtnMR.Text = "MR";
+            this.Help.SetToolTip(this.BtnMR, "Сохранить число в память");
             this.BtnMR.UseVisualStyleBackColor = false;
             this.BtnMR.Click += new System.EventHandler(this.BMemory_Click);
             // 
@@ -356,6 +370,7 @@
             this.BtnCE.Size = new System.Drawing.Size(80, 55);
             this.BtnCE.TabIndex = 13;
             this.BtnCE.Text = "CE";
+            this.Help.SetToolTip(this.BtnCE, "Очистить окно ввода");
             this.BtnCE.UseVisualStyleBackColor = false;
             this.BtnCE.Click += new System.EventHandler(this.BtnCE_Click);
             // 
@@ -371,6 +386,7 @@
             this.BtnC.Size = new System.Drawing.Size(80, 55);
             this.BtnC.TabIndex = 0;
             this.BtnC.Text = "C";
+            this.Help.SetToolTip(this.BtnC, "Стереть");
             this.BtnC.UseVisualStyleBackColor = false;
             this.BtnC.Click += new System.EventHandler(this.BtnC_Click);
             // 
@@ -704,6 +720,7 @@
             this.Mindicate.Size = new System.Drawing.Size(33, 27);
             this.Mindicate.TabIndex = 36;
             this.Mindicate.Text = "M";
+            this.Help.SetToolTip(this.Mindicate, "В памяти есть число");
             this.Mindicate.Visible = false;
             // 
             // Autor
@@ -722,6 +739,14 @@
             this.Autor.TabIndex = 37;
             this.Autor.Text = "veronika-nika1504@yandex.ru";
             this.Autor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Help
+            // 
+            this.Help.AutoPopDelay = 5000;
+            this.Help.InitialDelay = 500;
+            this.Help.ReshowDelay = 50;
+            this.Help.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
+            this.Help.ToolTipTitle = "Подсказка";
             // 
             // FormCalc
             // 
@@ -825,6 +850,7 @@
         private System.Windows.Forms.Button BtnAdd;
         private System.Windows.Forms.Label Mindicate;
         private System.Windows.Forms.TextBox Autor;
+        private System.Windows.Forms.ToolTip Help;
     }
 }
 

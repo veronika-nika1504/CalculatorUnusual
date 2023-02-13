@@ -157,14 +157,14 @@ namespace calculator
         {
             PnlHistory.Height = (PnlHistory.Height == 5) ? PnlHistory.Height = 400 : 5;
 
-            if (RtBoxDisplayHistory.Text == "Истории пока нет \n")
+            if (RtBoxDisplayHistory.Text == "История очищена \n")
                 RtBoxDisplayHistory.Clear();
         }
         private void BtnClearHistory_Click(object sender, EventArgs e)
         {
             RtBoxDisplayHistory.Clear();
             if (RtBoxDisplayHistory.Text == string.Empty)
-                RtBoxDisplayHistory.Text = "Истории пока нет \n";
+                RtBoxDisplayHistory.Text = "История очищена \n";
         }
 
         private void BtnBackSpace_Click(object sender, EventArgs e)
@@ -186,7 +186,8 @@ namespace calculator
 
         private void BtnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+           // toolTip1.Show("Объем", this.BtnExit);
+            Application.Exit();            
         }
         private void BtnRoll_Click(object sender, EventArgs e)
         {
@@ -327,6 +328,7 @@ namespace calculator
           
         }
        
+
         
             
             /*MessageBox.Show(
