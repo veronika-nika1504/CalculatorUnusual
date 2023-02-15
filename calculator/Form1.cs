@@ -152,7 +152,6 @@ namespace calculator
             }
             else TxtDisplay.Text = TxtDisplay.Text + button.Text;
         }
-
         private void BtnHistory_Click(object sender, EventArgs e)
         {
             PnlHistory.Height = (PnlHistory.Height == 5) ? PnlHistory.Height = 400 : 5;
@@ -166,7 +165,6 @@ namespace calculator
             if (RtBoxDisplayHistory.Text == string.Empty)
                 RtBoxDisplayHistory.Text = "История очищена \n";
         }
-
         private void BtnBackSpace_Click(object sender, EventArgs e)
         {
             if (TxtDisplay.Text.Length > 0)
@@ -183,10 +181,8 @@ namespace calculator
         {
             TxtDisplay.Text = "0";
         }
-
         private void BtnExit_Click(object sender, EventArgs e)
-        {
-           // toolTip1.Show("Объем", this.BtnExit);
+        {           
             Application.Exit();            
         }
         private void BtnRoll_Click(object sender, EventArgs e)
@@ -195,12 +191,14 @@ namespace calculator
         }
         private void BtnTransform_Click(object sender, EventArgs e)
         {
-            {                
+            {
+                //StartPosition = FormStartPosition.CenterScreen;
                 klik++;
                 if (klik >= 10) BtnTransform.Visible = false;            
                               
                 if (klik % 2 == 0)
                 {
+                    
                     Location = new Point(500, 80);
                     this.Width = 350;
                     this.Height = 570;
@@ -213,9 +211,7 @@ namespace calculator
                     //this.WindowState = FormWindowState.Maximized;                    
                 }               
             }
-        }      
-        
-
+        } 
         private void KBPress(object sender, KeyPressEventArgs e)
         {            
              switch (e.KeyChar.ToString())
@@ -241,28 +237,8 @@ namespace calculator
                 case "\x08": BtnBackSpace.PerformClick(); break;
 
             }
-           /* MessageBox.Show(
-                   e.KeyChar.ToString(),
-                 "Сообщение",
-                 MessageBoxButtons.YesNo,
-                 MessageBoxIcon.Information,
-                 MessageBoxDefaultButton.Button1,
-                 MessageBoxOptions.DefaultDesktopOnly);*/
-
-
-        }
-
-        private void MenuClick(object sender, EventArgs e)
-        {
-            MessageBox.Show(
-                 "Для реализации меню, пришлите пожелания на почту ...",
-                 "Сообщение",
-                 MessageBoxButtons.OK,
-                 MessageBoxIcon.Information,
-                 MessageBoxDefaultButton.Button1,
-                 MessageBoxOptions.DefaultDesktopOnly);
-        }
-
+          
+        }            
         private void BMemory_Click(object sender, EventArgs e)
         {
             if (TxtDisplay.Text == string.Empty && ((Button)sender).Name != "BtnMR" && ((Button)sender).Name != "BtnMC") return;
@@ -286,10 +262,10 @@ namespace calculator
             }
             Mindicate.Visible = (memory != 0);
         }
-
         private void FormCalc_Load(object sender, EventArgs e)
-        {
-           
+        {            
+            //ClientSize = new Size(350, 570);
+            //FormBorderStyle = FormBorderStyle.FixedSingle;
             foreach (Control value in this.Controls)
             {
                if (value.Name.Substring(0,3) == "Btn")
@@ -319,7 +295,43 @@ namespace calculator
             g.Dispose();            
 
         }
+        private void PanelMenu_Paint(object sender, PaintEventArgs e)
+        {
+            GraphicsPath gp = new GraphicsPath();
 
+            Graphics g = CreateGraphics();
+            // Создадим новый прямоугольник с размерами кнопки 
+            Rectangle smallRectangle = PanelMenu.ClientRectangle;
+            // уменьшим размеры прямоугольника 
+            smallRectangle.Inflate(30, 30);
+            // создадим эллипс, используя полученные размеры 
+            gp.AddEllipse(smallRectangle);
+            PanelMenu.Region = new Region(gp);
+            // рисуем окантовоку для круглой кнопки 
+            g.DrawEllipse(new Pen(Color.Gray, 2),
+                    PanelMenu.Left + 1,
+                    PanelMenu.Top + 1,
+                    PanelMenu.Width - 3,
+                    PanelMenu.Height - 3);
+            // освобождаем ресурсы 
+            g.Dispose();
+        }
+        private void MenuClick_Click(object sender, EventArgs e)
+        {           
+            if (PanelMenu.Visible == false) PanelMenu.Visible = true; 
+            else PanelMenu.Visible = false;
+        }
+
+        private void CalculatorTypes_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(
+            "Будет реализовано в следующей версии",
+            "Сообщение",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Information,
+            MessageBoxDefaultButton.Button1,
+            MessageBoxOptions.DefaultDesktopOnly);
+        }
 
         private void BtnPlMn_Click(object sender, EventArgs e)
         {
@@ -327,18 +339,12 @@ namespace calculator
             TxtDisplay.Text = Convert.ToString(-1 * Convert.ToDouble(TxtDisplay.Text));
           
         }
-       
-
-        
-            
-            /*MessageBox.Show(
-                  "Куку",
-                  "Сообщение",
-                  MessageBoxButtons.YesNo,
-                  MessageBoxIcon.Information,
-                  MessageBoxDefaultButton.Button1,
-                  MessageBoxOptions.DefaultDesktopOnly);*/
-            
-
+        /*MessageBox.Show(
+              "Куку",
+              "Сообщение",
+              MessageBoxButtons.YesNo,
+              MessageBoxIcon.Information,
+              MessageBoxDefaultButton.Button1,
+              MessageBoxOptions.DefaultDesktopOnly);*/
     }
 }

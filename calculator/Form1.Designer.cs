@@ -74,18 +74,28 @@
             this.Mindicate = new System.Windows.Forms.Label();
             this.Autor = new System.Windows.Forms.TextBox();
             this.Help = new System.Windows.Forms.ToolTip(this.components);
+            this.PanelMenu = new System.Windows.Forms.FlowLayoutPanel();
+            this.CalcMenuView = new System.Windows.Forms.Label();
+            this.separatorM1 = new System.Windows.Forms.Label();
+            this.NormalView = new System.Windows.Forms.Button();
+            this.EngineeringView = new System.Windows.Forms.Button();
+            this.separatorM2 = new System.Windows.Forms.Label();
+            this.UnitConverterView = new System.Windows.Forms.Button();
+            this.FuelConsumptionView = new System.Windows.Forms.Button();
             this.PnlTitle.SuspendLayout();
             this.PnlHistory.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.PanelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // PnlTitle
             // 
+            this.PnlTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.PnlTitle.BackColor = System.Drawing.Color.PowderBlue;
             this.PnlTitle.Controls.Add(this.BtnRoll);
             this.PnlTitle.Controls.Add(this.BtnTransform);
             this.PnlTitle.Controls.Add(this.BtnExit);
-            this.PnlTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.PnlTitle.Location = new System.Drawing.Point(0, 0);
             this.PnlTitle.Margin = new System.Windows.Forms.Padding(0);
             this.PnlTitle.Name = "PnlTitle";
@@ -180,10 +190,11 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.PowderBlue;
             this.panel1.Controls.Add(this.BtnMenu);
             this.panel1.Controls.Add(this.BtnHistory);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 40);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
@@ -192,6 +203,7 @@
             // 
             // BtnMenu
             // 
+            this.BtnMenu.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.BtnMenu.FlatAppearance.BorderSize = 0;
             this.BtnMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -203,7 +215,7 @@
             this.BtnMenu.TabIndex = 4;
             this.Help.SetToolTip(this.BtnMenu, "Меню");
             this.BtnMenu.UseVisualStyleBackColor = false;
-            this.BtnMenu.Click += new System.EventHandler(this.MenuClick);
+            this.BtnMenu.Click += new System.EventHandler(this.MenuClick_Click);
             // 
             // BtnHistory
             // 
@@ -223,9 +235,10 @@
             // 
             // TxtEstimation
             // 
+            this.TxtEstimation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtEstimation.BackColor = System.Drawing.Color.PowderBlue;
             this.TxtEstimation.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtEstimation.Dock = System.Windows.Forms.DockStyle.Top;
             this.TxtEstimation.Font = new System.Drawing.Font("Gadugi", 14F);
             this.TxtEstimation.ForeColor = System.Drawing.Color.Black;
             this.TxtEstimation.Location = new System.Drawing.Point(0, 80);
@@ -238,9 +251,10 @@
             // 
             // TxtDisplay
             // 
+            this.TxtDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtDisplay.BackColor = System.Drawing.Color.PowderBlue;
             this.TxtDisplay.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TxtDisplay.Dock = System.Windows.Forms.DockStyle.Top;
             this.TxtDisplay.Font = new System.Drawing.Font("Gadugi", 30F, System.Drawing.FontStyle.Bold);
             this.TxtDisplay.ForeColor = System.Drawing.Color.Black;
             this.TxtDisplay.Location = new System.Drawing.Point(0, 115);
@@ -254,6 +268,7 @@
             // 
             // BtnBackSpace
             // 
+            this.BtnBackSpace.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.BtnBackSpace.BackColor = System.Drawing.Color.MediumPurple;
             this.BtnBackSpace.FlatAppearance.BorderSize = 0;
             this.BtnBackSpace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -270,6 +285,7 @@
             // 
             // BtnMS
             // 
+            this.BtnMS.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.BtnMS.FlatAppearance.BorderSize = 0;
             this.BtnMS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnMS.ForeColor = System.Drawing.Color.MidnightBlue;
@@ -285,6 +301,7 @@
             // 
             // BtnMminus
             // 
+            this.BtnMminus.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.BtnMminus.FlatAppearance.BorderSize = 0;
             this.BtnMminus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnMminus.ForeColor = System.Drawing.Color.MidnightBlue;
@@ -300,6 +317,7 @@
             // 
             // BtnMplus
             // 
+            this.BtnMplus.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.BtnMplus.FlatAppearance.BorderSize = 0;
             this.BtnMplus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnMplus.ForeColor = System.Drawing.Color.MidnightBlue;
@@ -315,6 +333,7 @@
             // 
             // BtnMC
             // 
+            this.BtnMC.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.BtnMC.FlatAppearance.BorderSize = 0;
             this.BtnMC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnMC.ForeColor = System.Drawing.Color.MidnightBlue;
@@ -330,6 +349,7 @@
             // 
             // BtnMR
             // 
+            this.BtnMR.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.BtnMR.FlatAppearance.BorderSize = 0;
             this.BtnMR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnMR.ForeColor = System.Drawing.Color.MidnightBlue;
@@ -345,6 +365,7 @@
             // 
             // BtnPercent
             // 
+            this.BtnPercent.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.BtnPercent.BackColor = System.Drawing.Color.MediumPurple;
             this.BtnPercent.FlatAppearance.BorderSize = 0;
             this.BtnPercent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -360,6 +381,7 @@
             // 
             // BtnCE
             // 
+            this.BtnCE.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.BtnCE.BackColor = System.Drawing.Color.MediumPurple;
             this.BtnCE.FlatAppearance.BorderSize = 0;
             this.BtnCE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -376,6 +398,7 @@
             // 
             // BtnC
             // 
+            this.BtnC.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.BtnC.BackColor = System.Drawing.Color.MediumPurple;
             this.BtnC.FlatAppearance.BorderSize = 0;
             this.BtnC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -392,6 +415,7 @@
             // 
             // BtnSquare
             // 
+            this.BtnSquare.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.BtnSquare.BackColor = System.Drawing.Color.MediumPurple;
             this.BtnSquare.FlatAppearance.BorderSize = 0;
             this.BtnSquare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -408,6 +432,7 @@
             // 
             // BtnX2
             // 
+            this.BtnX2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.BtnX2.BackColor = System.Drawing.Color.MediumPurple;
             this.BtnX2.FlatAppearance.BorderSize = 0;
             this.BtnX2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -424,6 +449,7 @@
             // 
             // Btn1X
             // 
+            this.Btn1X.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Btn1X.BackColor = System.Drawing.Color.MediumPurple;
             this.Btn1X.FlatAppearance.BorderSize = 0;
             this.Btn1X.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -440,6 +466,7 @@
             // 
             // BtnDivision
             // 
+            this.BtnDivision.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.BtnDivision.BackColor = System.Drawing.Color.MediumPurple;
             this.BtnDivision.FlatAppearance.BorderSize = 0;
             this.BtnDivision.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -456,6 +483,7 @@
             // 
             // Btn7
             // 
+            this.Btn7.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Btn7.BackColor = System.Drawing.Color.DarkGray;
             this.Btn7.FlatAppearance.BorderSize = 0;
             this.Btn7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -472,6 +500,7 @@
             // 
             // Btn8
             // 
+            this.Btn8.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Btn8.BackColor = System.Drawing.Color.DarkGray;
             this.Btn8.FlatAppearance.BorderSize = 0;
             this.Btn8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -488,6 +517,7 @@
             // 
             // Btn9
             // 
+            this.Btn9.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Btn9.BackColor = System.Drawing.Color.DarkGray;
             this.Btn9.FlatAppearance.BorderSize = 0;
             this.Btn9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -504,6 +534,7 @@
             // 
             // BtnSubstraction
             // 
+            this.BtnSubstraction.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.BtnSubstraction.BackColor = System.Drawing.Color.MediumPurple;
             this.BtnSubstraction.FlatAppearance.BorderSize = 0;
             this.BtnSubstraction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -520,6 +551,7 @@
             // 
             // Btn4
             // 
+            this.Btn4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Btn4.BackColor = System.Drawing.Color.DarkGray;
             this.Btn4.FlatAppearance.BorderSize = 0;
             this.Btn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -536,6 +568,7 @@
             // 
             // Btn5
             // 
+            this.Btn5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Btn5.BackColor = System.Drawing.Color.DarkGray;
             this.Btn5.FlatAppearance.BorderSize = 0;
             this.Btn5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -552,6 +585,7 @@
             // 
             // Btn6
             // 
+            this.Btn6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Btn6.BackColor = System.Drawing.Color.DarkGray;
             this.Btn6.FlatAppearance.BorderSize = 0;
             this.Btn6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -568,6 +602,7 @@
             // 
             // BtnMultiply
             // 
+            this.BtnMultiply.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.BtnMultiply.BackColor = System.Drawing.Color.MediumPurple;
             this.BtnMultiply.FlatAppearance.BorderSize = 0;
             this.BtnMultiply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -584,6 +619,7 @@
             // 
             // Btn1
             // 
+            this.Btn1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Btn1.BackColor = System.Drawing.Color.DarkGray;
             this.Btn1.FlatAppearance.BorderSize = 0;
             this.Btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -600,6 +636,7 @@
             // 
             // Btn2
             // 
+            this.Btn2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Btn2.BackColor = System.Drawing.Color.DarkGray;
             this.Btn2.FlatAppearance.BorderSize = 0;
             this.Btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -616,6 +653,7 @@
             // 
             // Btn3
             // 
+            this.Btn3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Btn3.BackColor = System.Drawing.Color.DarkGray;
             this.Btn3.FlatAppearance.BorderSize = 0;
             this.Btn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -632,6 +670,7 @@
             // 
             // BtnEquals
             // 
+            this.BtnEquals.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.BtnEquals.BackColor = System.Drawing.Color.Chocolate;
             this.BtnEquals.FlatAppearance.BorderSize = 0;
             this.BtnEquals.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -648,6 +687,7 @@
             // 
             // BtnPM
             // 
+            this.BtnPM.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.BtnPM.BackColor = System.Drawing.Color.DarkGray;
             this.BtnPM.FlatAppearance.BorderSize = 0;
             this.BtnPM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -664,6 +704,7 @@
             // 
             // Btn0
             // 
+            this.Btn0.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.Btn0.BackColor = System.Drawing.Color.DarkGray;
             this.Btn0.FlatAppearance.BorderSize = 0;
             this.Btn0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -680,6 +721,7 @@
             // 
             // BtnDesimal
             // 
+            this.BtnDesimal.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.BtnDesimal.BackColor = System.Drawing.Color.DarkGray;
             this.BtnDesimal.FlatAppearance.BorderSize = 0;
             this.BtnDesimal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -696,6 +738,7 @@
             // 
             // BtnAdd
             // 
+            this.BtnAdd.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.BtnAdd.BackColor = System.Drawing.Color.MediumPurple;
             this.BtnAdd.FlatAppearance.BorderSize = 0;
             this.BtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -725,7 +768,7 @@
             // 
             // Autor
             // 
-            this.Autor.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.Autor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Autor.BackColor = System.Drawing.Color.PowderBlue;
             this.Autor.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Autor.Font = new System.Drawing.Font("Gadugi", 7.5F);
@@ -748,11 +791,124 @@
             this.Help.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             this.Help.ToolTipTitle = "Подсказка";
             // 
+            // PanelMenu
+            // 
+            this.PanelMenu.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.PanelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(208)))), ((int)(((byte)(216)))));
+            this.PanelMenu.Controls.Add(this.CalcMenuView);
+            this.PanelMenu.Controls.Add(this.separatorM1);
+            this.PanelMenu.Controls.Add(this.NormalView);
+            this.PanelMenu.Controls.Add(this.EngineeringView);
+            this.PanelMenu.Controls.Add(this.separatorM2);
+            this.PanelMenu.Controls.Add(this.UnitConverterView);
+            this.PanelMenu.Controls.Add(this.FuelConsumptionView);
+            this.PanelMenu.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.PanelMenu.ForeColor = System.Drawing.Color.DarkViolet;
+            this.PanelMenu.Location = new System.Drawing.Point(14, 75);
+            this.PanelMenu.Margin = new System.Windows.Forms.Padding(0);
+            this.PanelMenu.Name = "PanelMenu";
+            this.PanelMenu.Size = new System.Drawing.Size(154, 175);
+            this.PanelMenu.TabIndex = 7;
+            this.PanelMenu.Visible = false;
+            this.PanelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelMenu_Paint);
+            // 
+            // CalcMenuView
+            // 
+            this.CalcMenuView.Font = new System.Drawing.Font("Gadugi", 13F);
+            this.CalcMenuView.Location = new System.Drawing.Point(6, 3);
+            this.CalcMenuView.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.CalcMenuView.Name = "CalcMenuView";
+            this.CalcMenuView.Size = new System.Drawing.Size(145, 25);
+            this.CalcMenuView.TabIndex = 0;
+            this.CalcMenuView.Text = "Вид калькулятора";
+            this.CalcMenuView.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // separatorM1
+            // 
+            this.separatorM1.BackColor = System.Drawing.Color.White;
+            this.separatorM1.Font = new System.Drawing.Font("Gadugi", 13F);
+            this.separatorM1.ForeColor = System.Drawing.Color.White;
+            this.separatorM1.Location = new System.Drawing.Point(12, 38);
+            this.separatorM1.Margin = new System.Windows.Forms.Padding(12, 7, 3, 5);
+            this.separatorM1.Name = "separatorM1";
+            this.separatorM1.Size = new System.Drawing.Size(130, 1);
+            this.separatorM1.TabIndex = 704;
+            this.separatorM1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // NormalView
+            // 
+            this.NormalView.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.NormalView.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(206)))), ((int)(((byte)(214)))));
+            this.NormalView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.NormalView.Location = new System.Drawing.Point(7, 44);
+            this.NormalView.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.NormalView.Name = "NormalView";
+            this.NormalView.Size = new System.Drawing.Size(144, 30);
+            this.NormalView.TabIndex = 705;
+            this.NormalView.Text = "Обычный";
+            this.NormalView.UseVisualStyleBackColor = false;
+            this.NormalView.Click += new System.EventHandler(this.CalculatorTypes_Click);
+            // 
+            // EngineeringView
+            // 
+            this.EngineeringView.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.EngineeringView.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(206)))), ((int)(((byte)(214)))));
+            this.EngineeringView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EngineeringView.Location = new System.Drawing.Point(7, 74);
+            this.EngineeringView.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.EngineeringView.Name = "EngineeringView";
+            this.EngineeringView.Size = new System.Drawing.Size(144, 30);
+            this.EngineeringView.TabIndex = 706;
+            this.EngineeringView.Text = "Инженерный";
+            this.EngineeringView.UseVisualStyleBackColor = false;
+            this.EngineeringView.Click += new System.EventHandler(this.CalculatorTypes_Click);
+            // 
+            // separatorM2
+            // 
+            this.separatorM2.BackColor = System.Drawing.Color.White;
+            this.separatorM2.Font = new System.Drawing.Font("Gadugi", 13F);
+            this.separatorM2.ForeColor = System.Drawing.Color.White;
+            this.separatorM2.Location = new System.Drawing.Point(12, 107);
+            this.separatorM2.Margin = new System.Windows.Forms.Padding(12, 3, 3, 3);
+            this.separatorM2.Name = "separatorM2";
+            this.separatorM2.Size = new System.Drawing.Size(130, 1);
+            this.separatorM2.TabIndex = 708;
+            this.separatorM2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // UnitConverterView
+            // 
+            this.UnitConverterView.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.UnitConverterView.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(206)))), ((int)(((byte)(214)))));
+            this.UnitConverterView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UnitConverterView.Location = new System.Drawing.Point(7, 111);
+            this.UnitConverterView.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.UnitConverterView.Name = "UnitConverterView";
+            this.UnitConverterView.Size = new System.Drawing.Size(144, 30);
+            this.UnitConverterView.TabIndex = 709;
+            this.UnitConverterView.Text = "Конвертер величин";
+            this.UnitConverterView.UseVisualStyleBackColor = false;
+            this.UnitConverterView.Click += new System.EventHandler(this.CalculatorTypes_Click);
+            // 
+            // FuelConsumptionView
+            // 
+            this.FuelConsumptionView.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.FuelConsumptionView.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(206)))), ((int)(((byte)(214)))));
+            this.FuelConsumptionView.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.FuelConsumptionView.Location = new System.Drawing.Point(7, 141);
+            this.FuelConsumptionView.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.FuelConsumptionView.Name = "FuelConsumptionView";
+            this.FuelConsumptionView.Size = new System.Drawing.Size(144, 30);
+            this.FuelConsumptionView.TabIndex = 710;
+            this.FuelConsumptionView.Text = "Расход топлива";
+            this.FuelConsumptionView.UseVisualStyleBackColor = false;
+            this.FuelConsumptionView.Click += new System.EventHandler(this.CalculatorTypes_Click);
+            // 
             // FormCalc
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(350, 570);
+            this.Controls.Add(this.PanelMenu);
             this.Controls.Add(this.Autor);
             this.Controls.Add(this.Mindicate);
             this.Controls.Add(this.PnlHistory);
@@ -792,6 +948,7 @@
             this.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormCalc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCalc";
@@ -800,6 +957,7 @@
             this.PnlTitle.ResumeLayout(false);
             this.PnlHistory.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.PanelMenu.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -851,6 +1009,14 @@
         private System.Windows.Forms.Label Mindicate;
         private System.Windows.Forms.TextBox Autor;
         private System.Windows.Forms.ToolTip Help;
+        private System.Windows.Forms.Label CalcMenuView;
+        private System.Windows.Forms.FlowLayoutPanel PanelMenu;
+        private System.Windows.Forms.Label separatorM1;
+        private System.Windows.Forms.Button NormalView;
+        private System.Windows.Forms.Button EngineeringView;
+        private System.Windows.Forms.Label separatorM2;
+        private System.Windows.Forms.Button UnitConverterView;
+        private System.Windows.Forms.Button FuelConsumptionView;
     }
 }
 
