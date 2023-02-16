@@ -101,6 +101,7 @@
             this.PnlTitle.Name = "PnlTitle";
             this.PnlTitle.Size = new System.Drawing.Size(350, 40);
             this.PnlTitle.TabIndex = 0;
+            this.PnlTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // BtnRoll
             // 
@@ -116,6 +117,7 @@
             this.Help.SetToolTip(this.BtnRoll, "Свернуть");
             this.BtnRoll.UseVisualStyleBackColor = false;
             this.BtnRoll.Click += new System.EventHandler(this.BtnRoll_Click);
+            this.BtnRoll.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // BtnTransform
             // 
@@ -131,6 +133,7 @@
             this.Help.SetToolTip(this.BtnTransform, "Изменить размер");
             this.BtnTransform.UseVisualStyleBackColor = false;
             this.BtnTransform.Click += new System.EventHandler(this.BtnTransform_Click);
+            this.BtnTransform.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // BtnExit
             // 
@@ -146,6 +149,7 @@
             this.Help.SetToolTip(this.BtnExit, "Закрыть");
             this.BtnExit.UseVisualStyleBackColor = false;
             this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
+            this.BtnExit.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // PnlHistory
             // 
@@ -200,6 +204,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(350, 40);
             this.panel1.TabIndex = 2;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // BtnMenu
             // 
@@ -232,6 +237,7 @@
             this.Help.SetToolTip(this.BtnHistory, "История");
             this.BtnHistory.UseVisualStyleBackColor = false;
             this.BtnHistory.Click += new System.EventHandler(this.BtnHistory_Click);
+            this.BtnHistory.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // TxtEstimation
             // 
@@ -248,6 +254,7 @@
             this.TxtEstimation.Size = new System.Drawing.Size(350, 35);
             this.TxtEstimation.TabIndex = 3;
             this.TxtEstimation.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TxtEstimation.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // TxtDisplay
             // 
@@ -265,6 +272,7 @@
             this.TxtDisplay.TabIndex = 14;
             this.TxtDisplay.Text = "0";
             this.TxtDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TxtDisplay.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // BtnBackSpace
             // 
@@ -282,6 +290,7 @@
             this.Help.SetToolTip(this.BtnBackSpace, "Стереть последний символ");
             this.BtnBackSpace.UseVisualStyleBackColor = false;
             this.BtnBackSpace.Click += new System.EventHandler(this.BtnBackSpace_Click);
+            this.BtnBackSpace.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // BtnMS
             // 
@@ -298,6 +307,7 @@
             this.Help.SetToolTip(this.BtnMS, "Сохранить в память");
             this.BtnMS.UseVisualStyleBackColor = false;
             this.BtnMS.Click += new System.EventHandler(this.BMemory_Click);
+            this.BtnMS.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // BtnMminus
             // 
@@ -314,6 +324,7 @@
             this.Help.SetToolTip(this.BtnMminus, "Из числа в памяти вычесть число, на экране");
             this.BtnMminus.UseVisualStyleBackColor = false;
             this.BtnMminus.Click += new System.EventHandler(this.BMemory_Click);
+            this.BtnMminus.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // BtnMplus
             // 
@@ -330,6 +341,7 @@
             this.Help.SetToolTip(this.BtnMplus, "К числу в памяти прибавить число, на экране");
             this.BtnMplus.UseVisualStyleBackColor = false;
             this.BtnMplus.Click += new System.EventHandler(this.BMemory_Click);
+            this.BtnMplus.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // BtnMC
             // 
@@ -346,6 +358,7 @@
             this.Help.SetToolTip(this.BtnMC, "Очистить память");
             this.BtnMC.UseVisualStyleBackColor = false;
             this.BtnMC.Click += new System.EventHandler(this.BMemory_Click);
+            this.BtnMC.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // BtnMR
             // 
@@ -359,9 +372,10 @@
             this.BtnMR.Size = new System.Drawing.Size(50, 30);
             this.BtnMR.TabIndex = 7;
             this.BtnMR.Text = "MR";
-            this.Help.SetToolTip(this.BtnMR, "Сохранить число в память");
+            this.Help.SetToolTip(this.BtnMR, "Вывести из памяти число на экран");
             this.BtnMR.UseVisualStyleBackColor = false;
             this.BtnMR.Click += new System.EventHandler(this.BMemory_Click);
+            this.BtnMR.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // BtnPercent
             // 
@@ -378,6 +392,7 @@
             this.BtnPercent.Text = "%";
             this.BtnPercent.UseVisualStyleBackColor = false;
             this.BtnPercent.Click += new System.EventHandler(this.BtnOperations_Click);
+            this.BtnPercent.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // BtnCE
             // 
@@ -395,6 +410,7 @@
             this.Help.SetToolTip(this.BtnCE, "Очистить окно ввода");
             this.BtnCE.UseVisualStyleBackColor = false;
             this.BtnCE.Click += new System.EventHandler(this.BtnCE_Click);
+            this.BtnCE.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // BtnC
             // 
@@ -412,6 +428,7 @@
             this.Help.SetToolTip(this.BtnC, "Стереть");
             this.BtnC.UseVisualStyleBackColor = false;
             this.BtnC.Click += new System.EventHandler(this.BtnC_Click);
+            this.BtnC.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // BtnSquare
             // 
@@ -429,6 +446,7 @@
             this.BtnSquare.Text = "√x";
             this.BtnSquare.UseVisualStyleBackColor = false;
             this.BtnSquare.Click += new System.EventHandler(this.BtnOperations_Click);
+            this.BtnSquare.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // BtnX2
             // 
@@ -446,6 +464,7 @@
             this.BtnX2.Text = "x²";
             this.BtnX2.UseVisualStyleBackColor = false;
             this.BtnX2.Click += new System.EventHandler(this.BtnOperations_Click);
+            this.BtnX2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // Btn1X
             // 
@@ -463,6 +482,7 @@
             this.Btn1X.Text = "⅟x";
             this.Btn1X.UseVisualStyleBackColor = false;
             this.Btn1X.Click += new System.EventHandler(this.BtnOperations_Click);
+            this.Btn1X.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // BtnDivision
             // 
@@ -480,6 +500,7 @@
             this.BtnDivision.Text = "÷";
             this.BtnDivision.UseVisualStyleBackColor = false;
             this.BtnDivision.Click += new System.EventHandler(this.BtnMathOperation_Click);
+            this.BtnDivision.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // Btn7
             // 
@@ -497,6 +518,7 @@
             this.Btn7.Text = "7";
             this.Btn7.UseVisualStyleBackColor = false;
             this.Btn7.Click += new System.EventHandler(this.BtnNum_Click);
+            this.Btn7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // Btn8
             // 
@@ -514,6 +536,7 @@
             this.Btn8.Text = "8";
             this.Btn8.UseVisualStyleBackColor = false;
             this.Btn8.Click += new System.EventHandler(this.BtnNum_Click);
+            this.Btn8.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // Btn9
             // 
@@ -531,6 +554,7 @@
             this.Btn9.Text = "9";
             this.Btn9.UseVisualStyleBackColor = false;
             this.Btn9.Click += new System.EventHandler(this.BtnNum_Click);
+            this.Btn9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // BtnSubstraction
             // 
@@ -548,6 +572,7 @@
             this.BtnSubstraction.Text = "-";
             this.BtnSubstraction.UseVisualStyleBackColor = false;
             this.BtnSubstraction.Click += new System.EventHandler(this.BtnMathOperation_Click);
+            this.BtnSubstraction.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // Btn4
             // 
@@ -565,6 +590,7 @@
             this.Btn4.Text = "4";
             this.Btn4.UseVisualStyleBackColor = false;
             this.Btn4.Click += new System.EventHandler(this.BtnNum_Click);
+            this.Btn4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // Btn5
             // 
@@ -582,6 +608,7 @@
             this.Btn5.Text = "5";
             this.Btn5.UseVisualStyleBackColor = false;
             this.Btn5.Click += new System.EventHandler(this.BtnNum_Click);
+            this.Btn5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // Btn6
             // 
@@ -599,6 +626,7 @@
             this.Btn6.Text = "6";
             this.Btn6.UseVisualStyleBackColor = false;
             this.Btn6.Click += new System.EventHandler(this.BtnNum_Click);
+            this.Btn6.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // BtnMultiply
             // 
@@ -616,6 +644,7 @@
             this.BtnMultiply.Text = "×";
             this.BtnMultiply.UseVisualStyleBackColor = false;
             this.BtnMultiply.Click += new System.EventHandler(this.BtnMathOperation_Click);
+            this.BtnMultiply.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // Btn1
             // 
@@ -633,6 +662,7 @@
             this.Btn1.Text = "1";
             this.Btn1.UseVisualStyleBackColor = false;
             this.Btn1.Click += new System.EventHandler(this.BtnNum_Click);
+            this.Btn1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // Btn2
             // 
@@ -650,6 +680,7 @@
             this.Btn2.Text = "2";
             this.Btn2.UseVisualStyleBackColor = false;
             this.Btn2.Click += new System.EventHandler(this.BtnNum_Click);
+            this.Btn2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // Btn3
             // 
@@ -667,6 +698,7 @@
             this.Btn3.Text = "3";
             this.Btn3.UseVisualStyleBackColor = false;
             this.Btn3.Click += new System.EventHandler(this.BtnNum_Click);
+            this.Btn3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // BtnEquals
             // 
@@ -684,6 +716,7 @@
             this.BtnEquals.Text = "=";
             this.BtnEquals.UseVisualStyleBackColor = false;
             this.BtnEquals.Click += new System.EventHandler(this.BtnEquals_Click);
+            this.BtnEquals.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // BtnPM
             // 
@@ -701,6 +734,7 @@
             this.BtnPM.Text = "±";
             this.BtnPM.UseVisualStyleBackColor = false;
             this.BtnPM.Click += new System.EventHandler(this.BtnPlMn_Click);
+            this.BtnPM.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // Btn0
             // 
@@ -718,6 +752,7 @@
             this.Btn0.Text = "0";
             this.Btn0.UseVisualStyleBackColor = false;
             this.Btn0.Click += new System.EventHandler(this.BtnNum_Click);
+            this.Btn0.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // BtnDesimal
             // 
@@ -735,6 +770,7 @@
             this.BtnDesimal.Text = ",";
             this.BtnDesimal.UseVisualStyleBackColor = false;
             this.BtnDesimal.Click += new System.EventHandler(this.BtnNum_Click);
+            this.BtnDesimal.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // BtnAdd
             // 
@@ -752,6 +788,7 @@
             this.BtnAdd.Text = "+";
             this.BtnAdd.UseVisualStyleBackColor = false;
             this.BtnAdd.Click += new System.EventHandler(this.BtnMathOperation_Click);
+            this.BtnAdd.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // Mindicate
             // 
@@ -782,6 +819,7 @@
             this.Autor.TabIndex = 37;
             this.Autor.Text = "veronika-nika1504@yandex.ru";
             this.Autor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Autor.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // Help
             // 
@@ -954,6 +992,7 @@
             this.Text = "FormCalc";
             this.Load += new System.EventHandler(this.FormCalc_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KBPress);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             this.PnlTitle.ResumeLayout(false);
             this.PnlHistory.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

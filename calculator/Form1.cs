@@ -29,9 +29,9 @@ namespace calculator
             this.KeyPreview = true;
             InitializeComponent();
         }
-
         private void BtnMathOperation_Click(object sender, EventArgs e)
-        {            
+        {
+            if (TxtDisplay.Text == ",") return;
             if (result != 0) BtnEquals.PerformClick();
             else result = Double.Parse(TxtDisplay.Text);
 
@@ -97,12 +97,9 @@ namespace calculator
             System.Windows.Forms.Button button = (Button)sender;
             operation = button.Text;
 
-            string point;
-            point = TxtDisplay.Text;
-            if (point == " ,")
-                 point = "0,";
-            Convert.ToDouble(point);
-
+            if (TxtDisplay.Text == ",") return;
+            if (result != 0) BtnEquals.PerformClick();
+            else result = Double.Parse(TxtDisplay.Text);            
             switch (operation)
             {
                 case "√x":
@@ -245,6 +242,7 @@ namespace calculator
             switch (((Button)sender).Name)
             {
                 case "BtnMS":
+                    if (TxtDisplay.Text == ",") return;
                     memory = Double.Parse(TxtDisplay.Text);
                     break;
                 case "BtnMC":
@@ -263,7 +261,7 @@ namespace calculator
             Mindicate.Visible = (memory != 0);
         }
         private void FormCalc_Load(object sender, EventArgs e)
-        {            
+        {
             //ClientSize = new Size(350, 570);
             //FormBorderStyle = FormBorderStyle.FixedSingle;
             foreach (Control value in this.Controls)
@@ -272,9 +270,8 @@ namespace calculator
                     BtnCircle((Button)value);
             }
         }
-        private void BtnCircle(Button Btn)
-        {
-            
+        private void BtnCircle(Button Btn) //скругление кнопок
+        {            
             GraphicsPath gp = new GraphicsPath();
             
             Graphics g = CreateGraphics();
@@ -292,12 +289,11 @@ namespace calculator
                     Btn.Width - 3,
                     Btn.Height - 3);
                 // освобождаем ресурсы 
-            g.Dispose();            
-
+            g.Dispose();
         }
-        private void PanelMenu_Paint(object sender, PaintEventArgs e)
+        private void PanelMenu_Paint(object sender, PaintEventArgs e) // скругление панели меню
         {
-            GraphicsPath gp = new GraphicsPath();
+                GraphicsPath gp = new GraphicsPath();
 
             Graphics g = CreateGraphics();
             // Создадим новый прямоугольник с размерами кнопки 
@@ -316,12 +312,11 @@ namespace calculator
             // освобождаем ресурсы 
             g.Dispose();
         }
-        private void MenuClick_Click(object sender, EventArgs e)
-        {           
-            if (PanelMenu.Visible == false) PanelMenu.Visible = true; 
+        private void MenuClick_Click(object sender, EventArgs e) //Закрытие меню
+        {   
+            if (PanelMenu.Visible == false) PanelMenu.Visible = true;
             else PanelMenu.Visible = false;
-        }
-
+        }               
         private void CalculatorTypes_Click(object sender, EventArgs e)
         {
             MessageBox.Show(
@@ -332,12 +327,21 @@ namespace calculator
             MessageBoxDefaultButton.Button1,
             MessageBoxOptions.DefaultDesktopOnly);
         }
-
+        private void FormCalc_MouseDown(object sender, MouseEventArgs e) //для закрытия меню
+        {
+            int index = 0;
+            if (e.Button == MouseButtons.Left)
+            {
+                index = e.Y;
+                if (index == e.Y) PanelMenu.Visible = false;                
+            }
+        }
         private void BtnPlMn_Click(object sender, EventArgs e)
         {
+            if (TxtDisplay.Text == ",") return;
+
             if (TxtDisplay.Text == string.Empty) return;
-            TxtDisplay.Text = Convert.ToString(-1 * Convert.ToDouble(TxtDisplay.Text));
-          
+            TxtDisplay.Text = Convert.ToString(-1 * Convert.ToDouble(TxtDisplay.Text));          
         }
         /*MessageBox.Show(
               "Куку",
