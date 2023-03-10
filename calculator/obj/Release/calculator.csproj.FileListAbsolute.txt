@@ -1,0 +1,14 @@
+E:\JOB\project\Professional\source\repos\CalculatorUnusual\calculator\bin\Release\calculator.exe.config
+E:\JOB\project\Professional\source\repos\CalculatorUnusual\calculator\bin\Release\calculator.exe
+E:\JOB\project\Professional\source\repos\CalculatorUnusual\calculator\bin\Release\calculator.pdb
+E:\JOB\project\Professional\source\repos\CalculatorUnusual\calculator\bin\Release\StyleCop.dll
+E:\JOB\project\Professional\source\repos\CalculatorUnusual\calculator\bin\Release\StyleCop.xml
+E:\JOB\project\Professional\source\repos\CalculatorUnusual\calculator\obj\Release\calculator.csproj.AssemblyReference.cache
+E:\JOB\project\Professional\source\repos\CalculatorUnusual\calculator\obj\Release\calculator.csproj.SuggestedBindingRedirects.cache
+E:\JOB\project\Professional\source\repos\CalculatorUnusual\calculator\obj\Release\Calculator.FormCalc.resources
+E:\JOB\project\Professional\source\repos\CalculatorUnusual\calculator\obj\Release\calculator.Properties.Resources.resources
+E:\JOB\project\Professional\source\repos\CalculatorUnusual\calculator\obj\Release\calculator.csproj.GenerateResource.cache
+E:\JOB\project\Professional\source\repos\CalculatorUnusual\calculator\obj\Release\calculator.csproj.CoreCompileInputs.cache
+E:\JOB\project\Professional\source\repos\CalculatorUnusual\calculator\obj\Release\calculator.csproj.CopyComplete
+E:\JOB\project\Professional\source\repos\CalculatorUnusual\calculator\obj\Release\calculator.exe
+E:\JOB\project\Professional\source\repos\CalculatorUnusual\calculator\obj\Release\calculator.pdb
