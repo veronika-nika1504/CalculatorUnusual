@@ -20,3 +20,6 @@ E:\JOB\project\Professional\source\repos\CalculatorUnusual\calculator\obj\Debug\
 E:\JOB\project\Professional\source\repos\CalculatorUnusual\calculator\obj\Debug\calculator.csproj.CoreCompileInputs.cache
 E:\JOB\project\Professional\source\repos\CalculatorUnusual\calculator\obj\Debug\calculator.exe
 E:\JOB\project\Professional\source\repos\CalculatorUnusual\calculator\obj\Debug\calculator.pdb
+E:\JOB\project\Professional\source\repos\CalculatorUnusual\calculator\bin\Debug\StyleCop.dll
+E:\JOB\project\Professional\source\repos\CalculatorUnusual\calculator\bin\Debug\StyleCop.xml
+E:\JOB\project\Professional\source\repos\CalculatorUnusual\calculator\obj\Debug\calculator.csproj.CopyComplete

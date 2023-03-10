@@ -6,6 +6,8 @@ using System.Windows.Forms;
 
 namespace calculator
 {
+    using Calculator;
+
     internal static class Program
     {
         /// <summary>

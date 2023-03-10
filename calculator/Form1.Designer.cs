@@ -1,5 +1,9 @@
-﻿namespace calculator
+﻿namespace Calculator
 {
+    using System.Runtime.InteropServices;
+    using System;
+    using System.Windows.Forms;
+
     partial class FormCalc
     {
         /// <summary>
@@ -82,6 +86,7 @@
             this.separatorM2 = new System.Windows.Forms.Label();
             this.UnitConverterView = new System.Windows.Forms.Button();
             this.FuelConsumptionView = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.PnlTitle.SuspendLayout();
             this.PnlHistory.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -101,7 +106,8 @@
             this.PnlTitle.Name = "PnlTitle";
             this.PnlTitle.Size = new System.Drawing.Size(350, 40);
             this.PnlTitle.TabIndex = 0;
-            this.PnlTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
+            this.PnlTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.PnlTitle_MouseDown);
+            this.PnlTitle.MouseMove += new System.Windows.Forms.MouseEventHandler(this.PnlTitle_MouseMove);
             // 
             // BtnRoll
             // 
@@ -113,7 +119,8 @@
             this.BtnRoll.Margin = new System.Windows.Forms.Padding(0);
             this.BtnRoll.Name = "BtnRoll";
             this.BtnRoll.Size = new System.Drawing.Size(50, 40);
-            this.BtnRoll.TabIndex = 1;
+            this.BtnRoll.TabIndex = 0;
+            this.BtnRoll.TabStop = false;
             this.Help.SetToolTip(this.BtnRoll, "Свернуть");
             this.BtnRoll.UseVisualStyleBackColor = false;
             this.BtnRoll.Click += new System.EventHandler(this.BtnRoll_Click);
@@ -129,7 +136,8 @@
             this.BtnTransform.Margin = new System.Windows.Forms.Padding(0);
             this.BtnTransform.Name = "BtnTransform";
             this.BtnTransform.Size = new System.Drawing.Size(50, 40);
-            this.BtnTransform.TabIndex = 2;
+            this.BtnTransform.TabIndex = 0;
+            this.BtnTransform.TabStop = false;
             this.Help.SetToolTip(this.BtnTransform, "Изменить размер");
             this.BtnTransform.UseVisualStyleBackColor = false;
             this.BtnTransform.Click += new System.EventHandler(this.BtnTransform_Click);
@@ -145,7 +153,8 @@
             this.BtnExit.Margin = new System.Windows.Forms.Padding(0);
             this.BtnExit.Name = "BtnExit";
             this.BtnExit.Size = new System.Drawing.Size(50, 40);
-            this.BtnExit.TabIndex = 3;
+            this.BtnExit.TabIndex = 0;
+            this.BtnExit.TabStop = false;
             this.Help.SetToolTip(this.BtnExit, "Закрыть");
             this.BtnExit.UseVisualStyleBackColor = false;
             this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
@@ -160,7 +169,7 @@
             this.PnlHistory.Margin = new System.Windows.Forms.Padding(0);
             this.PnlHistory.Name = "PnlHistory";
             this.PnlHistory.Size = new System.Drawing.Size(350, 5);
-            this.PnlHistory.TabIndex = 1;
+            this.PnlHistory.TabIndex = 0;
             // 
             // RtBoxDisplayHistory
             // 
@@ -171,11 +180,13 @@
             this.RtBoxDisplayHistory.Location = new System.Drawing.Point(0, 0);
             this.RtBoxDisplayHistory.Margin = new System.Windows.Forms.Padding(0);
             this.RtBoxDisplayHistory.Name = "RtBoxDisplayHistory";
-            this.RtBoxDisplayHistory.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Horizontal;
+            this.RtBoxDisplayHistory.ReadOnly = true;
             this.RtBoxDisplayHistory.Size = new System.Drawing.Size(350, 0);
-            this.RtBoxDisplayHistory.TabIndex = 4;
+            this.RtBoxDisplayHistory.TabIndex = 0;
+            this.RtBoxDisplayHistory.TabStop = false;
             this.RtBoxDisplayHistory.Text = "";
             this.RtBoxDisplayHistory.ZoomFactor = 1.5F;
+            this.RtBoxDisplayHistory.Click += new System.EventHandler(this.LostFocus);
             // 
             // BtnClearHistory
             // 
@@ -187,7 +198,8 @@
             this.BtnClearHistory.Margin = new System.Windows.Forms.Padding(0);
             this.BtnClearHistory.Name = "BtnClearHistory";
             this.BtnClearHistory.Size = new System.Drawing.Size(350, 40);
-            this.BtnClearHistory.TabIndex = 36;
+            this.BtnClearHistory.TabIndex = 0;
+            this.BtnClearHistory.TabStop = false;
             this.Help.SetToolTip(this.BtnClearHistory, "Очистить историю");
             this.BtnClearHistory.UseVisualStyleBackColor = false;
             this.BtnClearHistory.Click += new System.EventHandler(this.BtnClearHistory_Click);
@@ -203,7 +215,7 @@
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(350, 40);
-            this.panel1.TabIndex = 2;
+            this.panel1.TabIndex = 0;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // BtnMenu
@@ -217,7 +229,8 @@
             this.BtnMenu.Margin = new System.Windows.Forms.Padding(0);
             this.BtnMenu.Name = "BtnMenu";
             this.BtnMenu.Size = new System.Drawing.Size(50, 40);
-            this.BtnMenu.TabIndex = 4;
+            this.BtnMenu.TabIndex = 0;
+            this.BtnMenu.TabStop = false;
             this.Help.SetToolTip(this.BtnMenu, "Меню");
             this.BtnMenu.UseVisualStyleBackColor = false;
             this.BtnMenu.Click += new System.EventHandler(this.MenuClick_Click);
@@ -233,7 +246,8 @@
             this.BtnHistory.MinimumSize = new System.Drawing.Size(18, 18);
             this.BtnHistory.Name = "BtnHistory";
             this.BtnHistory.Size = new System.Drawing.Size(50, 40);
-            this.BtnHistory.TabIndex = 5;
+            this.BtnHistory.TabIndex = 0;
+            this.BtnHistory.TabStop = false;
             this.Help.SetToolTip(this.BtnHistory, "История");
             this.BtnHistory.UseVisualStyleBackColor = false;
             this.BtnHistory.Click += new System.EventHandler(this.BtnHistory_Click);
@@ -251,13 +265,18 @@
             this.TxtEstimation.Margin = new System.Windows.Forms.Padding(0);
             this.TxtEstimation.Multiline = true;
             this.TxtEstimation.Name = "TxtEstimation";
+            this.TxtEstimation.ReadOnly = true;
             this.TxtEstimation.Size = new System.Drawing.Size(350, 35);
-            this.TxtEstimation.TabIndex = 3;
+            this.TxtEstimation.TabIndex = 0;
+            this.TxtEstimation.TabStop = false;
             this.TxtEstimation.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TxtEstimation.Click += new System.EventHandler(this.LostFocus);
+            this.TxtEstimation.TextChanged += new System.EventHandler(this.TxtEstimation_TextChanged);
             this.TxtEstimation.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // TxtDisplay
             // 
+            this.TxtDisplay.AcceptsReturn = true;
             this.TxtDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtDisplay.BackColor = System.Drawing.Color.PowderBlue;
@@ -268,10 +287,14 @@
             this.TxtDisplay.Margin = new System.Windows.Forms.Padding(0);
             this.TxtDisplay.Multiline = true;
             this.TxtDisplay.Name = "TxtDisplay";
+            this.TxtDisplay.ReadOnly = true;
             this.TxtDisplay.Size = new System.Drawing.Size(350, 50);
-            this.TxtDisplay.TabIndex = 14;
+            this.TxtDisplay.TabIndex = 0;
+            this.TxtDisplay.TabStop = false;
             this.TxtDisplay.Text = "0";
             this.TxtDisplay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TxtDisplay.Click += new System.EventHandler(this.LostFocus);
+            this.TxtDisplay.TextChanged += new System.EventHandler(this.TxtDisplay_TextChanged);
             this.TxtDisplay.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
             // 
             // BtnBackSpace
@@ -286,7 +309,8 @@
             this.BtnBackSpace.Margin = new System.Windows.Forms.Padding(0);
             this.BtnBackSpace.Name = "BtnBackSpace";
             this.BtnBackSpace.Size = new System.Drawing.Size(80, 55);
-            this.BtnBackSpace.TabIndex = 15;
+            this.BtnBackSpace.TabIndex = 0;
+            this.BtnBackSpace.TabStop = false;
             this.Help.SetToolTip(this.BtnBackSpace, "Стереть последний символ");
             this.BtnBackSpace.UseVisualStyleBackColor = false;
             this.BtnBackSpace.Click += new System.EventHandler(this.BtnBackSpace_Click);
@@ -302,7 +326,8 @@
             this.BtnMS.Margin = new System.Windows.Forms.Padding(0);
             this.BtnMS.Name = "BtnMS";
             this.BtnMS.Size = new System.Drawing.Size(50, 30);
-            this.BtnMS.TabIndex = 10;
+            this.BtnMS.TabIndex = 0;
+            this.BtnMS.TabStop = false;
             this.BtnMS.Text = "MS";
             this.Help.SetToolTip(this.BtnMS, "Сохранить в память");
             this.BtnMS.UseVisualStyleBackColor = false;
@@ -319,7 +344,8 @@
             this.BtnMminus.Margin = new System.Windows.Forms.Padding(0);
             this.BtnMminus.Name = "BtnMminus";
             this.BtnMminus.Size = new System.Drawing.Size(50, 30);
-            this.BtnMminus.TabIndex = 9;
+            this.BtnMminus.TabIndex = 0;
+            this.BtnMminus.TabStop = false;
             this.BtnMminus.Text = "M-";
             this.Help.SetToolTip(this.BtnMminus, "Из числа в памяти вычесть число, на экране");
             this.BtnMminus.UseVisualStyleBackColor = false;
@@ -336,7 +362,8 @@
             this.BtnMplus.Margin = new System.Windows.Forms.Padding(0);
             this.BtnMplus.Name = "BtnMplus";
             this.BtnMplus.Size = new System.Drawing.Size(50, 30);
-            this.BtnMplus.TabIndex = 8;
+            this.BtnMplus.TabIndex = 0;
+            this.BtnMplus.TabStop = false;
             this.BtnMplus.Text = "M+";
             this.Help.SetToolTip(this.BtnMplus, "К числу в памяти прибавить число, на экране");
             this.BtnMplus.UseVisualStyleBackColor = false;
@@ -353,7 +380,8 @@
             this.BtnMC.Margin = new System.Windows.Forms.Padding(0);
             this.BtnMC.Name = "BtnMC";
             this.BtnMC.Size = new System.Drawing.Size(50, 30);
-            this.BtnMC.TabIndex = 6;
+            this.BtnMC.TabIndex = 0;
+            this.BtnMC.TabStop = false;
             this.BtnMC.Text = "MC";
             this.Help.SetToolTip(this.BtnMC, "Очистить память");
             this.BtnMC.UseVisualStyleBackColor = false;
@@ -370,7 +398,8 @@
             this.BtnMR.Margin = new System.Windows.Forms.Padding(0);
             this.BtnMR.Name = "BtnMR";
             this.BtnMR.Size = new System.Drawing.Size(50, 30);
-            this.BtnMR.TabIndex = 7;
+            this.BtnMR.TabIndex = 0;
+            this.BtnMR.TabStop = false;
             this.BtnMR.Text = "MR";
             this.Help.SetToolTip(this.BtnMR, "Вывести из памяти число на экран");
             this.BtnMR.UseVisualStyleBackColor = false;
@@ -388,7 +417,8 @@
             this.BtnPercent.Margin = new System.Windows.Forms.Padding(0);
             this.BtnPercent.Name = "BtnPercent";
             this.BtnPercent.Size = new System.Drawing.Size(80, 55);
-            this.BtnPercent.TabIndex = 12;
+            this.BtnPercent.TabIndex = 0;
+            this.BtnPercent.TabStop = false;
             this.BtnPercent.Text = "%";
             this.BtnPercent.UseVisualStyleBackColor = false;
             this.BtnPercent.Click += new System.EventHandler(this.BtnOperations_Click);
@@ -405,7 +435,8 @@
             this.BtnCE.Margin = new System.Windows.Forms.Padding(0);
             this.BtnCE.Name = "BtnCE";
             this.BtnCE.Size = new System.Drawing.Size(80, 55);
-            this.BtnCE.TabIndex = 13;
+            this.BtnCE.TabIndex = 0;
+            this.BtnCE.TabStop = false;
             this.BtnCE.Text = "CE";
             this.Help.SetToolTip(this.BtnCE, "Очистить окно ввода");
             this.BtnCE.UseVisualStyleBackColor = false;
@@ -424,6 +455,7 @@
             this.BtnC.Name = "BtnC";
             this.BtnC.Size = new System.Drawing.Size(80, 55);
             this.BtnC.TabIndex = 0;
+            this.BtnC.TabStop = false;
             this.BtnC.Text = "C";
             this.Help.SetToolTip(this.BtnC, "Стереть");
             this.BtnC.UseVisualStyleBackColor = false;
@@ -442,7 +474,8 @@
             this.BtnSquare.Margin = new System.Windows.Forms.Padding(0);
             this.BtnSquare.Name = "BtnSquare";
             this.BtnSquare.Size = new System.Drawing.Size(80, 55);
-            this.BtnSquare.TabIndex = 18;
+            this.BtnSquare.TabIndex = 0;
+            this.BtnSquare.TabStop = false;
             this.BtnSquare.Text = "√x";
             this.BtnSquare.UseVisualStyleBackColor = false;
             this.BtnSquare.Click += new System.EventHandler(this.BtnOperations_Click);
@@ -460,7 +493,8 @@
             this.BtnX2.Margin = new System.Windows.Forms.Padding(0);
             this.BtnX2.Name = "BtnX2";
             this.BtnX2.Size = new System.Drawing.Size(80, 55);
-            this.BtnX2.TabIndex = 17;
+            this.BtnX2.TabIndex = 0;
+            this.BtnX2.TabStop = false;
             this.BtnX2.Text = "x²";
             this.BtnX2.UseVisualStyleBackColor = false;
             this.BtnX2.Click += new System.EventHandler(this.BtnOperations_Click);
@@ -478,7 +512,8 @@
             this.Btn1X.Margin = new System.Windows.Forms.Padding(0);
             this.Btn1X.Name = "Btn1X";
             this.Btn1X.Size = new System.Drawing.Size(80, 55);
-            this.Btn1X.TabIndex = 16;
+            this.Btn1X.TabIndex = 0;
+            this.Btn1X.TabStop = false;
             this.Btn1X.Text = "⅟x";
             this.Btn1X.UseVisualStyleBackColor = false;
             this.Btn1X.Click += new System.EventHandler(this.BtnOperations_Click);
@@ -496,7 +531,8 @@
             this.BtnDivision.Margin = new System.Windows.Forms.Padding(0);
             this.BtnDivision.Name = "BtnDivision";
             this.BtnDivision.Size = new System.Drawing.Size(80, 55);
-            this.BtnDivision.TabIndex = 19;
+            this.BtnDivision.TabIndex = 0;
+            this.BtnDivision.TabStop = false;
             this.BtnDivision.Text = "÷";
             this.BtnDivision.UseVisualStyleBackColor = false;
             this.BtnDivision.Click += new System.EventHandler(this.BtnMathOperation_Click);
@@ -514,7 +550,8 @@
             this.Btn7.Margin = new System.Windows.Forms.Padding(0);
             this.Btn7.Name = "Btn7";
             this.Btn7.Size = new System.Drawing.Size(80, 55);
-            this.Btn7.TabIndex = 20;
+            this.Btn7.TabIndex = 0;
+            this.Btn7.TabStop = false;
             this.Btn7.Text = "7";
             this.Btn7.UseVisualStyleBackColor = false;
             this.Btn7.Click += new System.EventHandler(this.BtnNum_Click);
@@ -532,7 +569,8 @@
             this.Btn8.Margin = new System.Windows.Forms.Padding(0);
             this.Btn8.Name = "Btn8";
             this.Btn8.Size = new System.Drawing.Size(80, 55);
-            this.Btn8.TabIndex = 21;
+            this.Btn8.TabIndex = 0;
+            this.Btn8.TabStop = false;
             this.Btn8.Text = "8";
             this.Btn8.UseVisualStyleBackColor = false;
             this.Btn8.Click += new System.EventHandler(this.BtnNum_Click);
@@ -550,7 +588,8 @@
             this.Btn9.Margin = new System.Windows.Forms.Padding(0);
             this.Btn9.Name = "Btn9";
             this.Btn9.Size = new System.Drawing.Size(80, 55);
-            this.Btn9.TabIndex = 22;
+            this.Btn9.TabIndex = 0;
+            this.Btn9.TabStop = false;
             this.Btn9.Text = "9";
             this.Btn9.UseVisualStyleBackColor = false;
             this.Btn9.Click += new System.EventHandler(this.BtnNum_Click);
@@ -568,7 +607,8 @@
             this.BtnSubstraction.Margin = new System.Windows.Forms.Padding(0);
             this.BtnSubstraction.Name = "BtnSubstraction";
             this.BtnSubstraction.Size = new System.Drawing.Size(80, 55);
-            this.BtnSubstraction.TabIndex = 27;
+            this.BtnSubstraction.TabIndex = 0;
+            this.BtnSubstraction.TabStop = false;
             this.BtnSubstraction.Text = "-";
             this.BtnSubstraction.UseVisualStyleBackColor = false;
             this.BtnSubstraction.Click += new System.EventHandler(this.BtnMathOperation_Click);
@@ -586,7 +626,8 @@
             this.Btn4.Margin = new System.Windows.Forms.Padding(0);
             this.Btn4.Name = "Btn4";
             this.Btn4.Size = new System.Drawing.Size(80, 55);
-            this.Btn4.TabIndex = 24;
+            this.Btn4.TabIndex = 0;
+            this.Btn4.TabStop = false;
             this.Btn4.Text = "4";
             this.Btn4.UseVisualStyleBackColor = false;
             this.Btn4.Click += new System.EventHandler(this.BtnNum_Click);
@@ -604,7 +645,8 @@
             this.Btn5.Margin = new System.Windows.Forms.Padding(0);
             this.Btn5.Name = "Btn5";
             this.Btn5.Size = new System.Drawing.Size(80, 55);
-            this.Btn5.TabIndex = 25;
+            this.Btn5.TabIndex = 0;
+            this.Btn5.TabStop = false;
             this.Btn5.Text = "5";
             this.Btn5.UseVisualStyleBackColor = false;
             this.Btn5.Click += new System.EventHandler(this.BtnNum_Click);
@@ -622,7 +664,8 @@
             this.Btn6.Margin = new System.Windows.Forms.Padding(0);
             this.Btn6.Name = "Btn6";
             this.Btn6.Size = new System.Drawing.Size(80, 55);
-            this.Btn6.TabIndex = 26;
+            this.Btn6.TabIndex = 0;
+            this.Btn6.TabStop = false;
             this.Btn6.Text = "6";
             this.Btn6.UseVisualStyleBackColor = false;
             this.Btn6.Click += new System.EventHandler(this.BtnNum_Click);
@@ -640,7 +683,8 @@
             this.BtnMultiply.Margin = new System.Windows.Forms.Padding(0);
             this.BtnMultiply.Name = "BtnMultiply";
             this.BtnMultiply.Size = new System.Drawing.Size(80, 55);
-            this.BtnMultiply.TabIndex = 23;
+            this.BtnMultiply.TabIndex = 0;
+            this.BtnMultiply.TabStop = false;
             this.BtnMultiply.Text = "×";
             this.BtnMultiply.UseVisualStyleBackColor = false;
             this.BtnMultiply.Click += new System.EventHandler(this.BtnMathOperation_Click);
@@ -658,7 +702,8 @@
             this.Btn1.Margin = new System.Windows.Forms.Padding(0);
             this.Btn1.Name = "Btn1";
             this.Btn1.Size = new System.Drawing.Size(80, 55);
-            this.Btn1.TabIndex = 28;
+            this.Btn1.TabIndex = 0;
+            this.Btn1.TabStop = false;
             this.Btn1.Text = "1";
             this.Btn1.UseVisualStyleBackColor = false;
             this.Btn1.Click += new System.EventHandler(this.BtnNum_Click);
@@ -676,7 +721,8 @@
             this.Btn2.Margin = new System.Windows.Forms.Padding(0);
             this.Btn2.Name = "Btn2";
             this.Btn2.Size = new System.Drawing.Size(80, 55);
-            this.Btn2.TabIndex = 29;
+            this.Btn2.TabIndex = 0;
+            this.Btn2.TabStop = false;
             this.Btn2.Text = "2";
             this.Btn2.UseVisualStyleBackColor = false;
             this.Btn2.Click += new System.EventHandler(this.BtnNum_Click);
@@ -694,7 +740,8 @@
             this.Btn3.Margin = new System.Windows.Forms.Padding(0);
             this.Btn3.Name = "Btn3";
             this.Btn3.Size = new System.Drawing.Size(80, 55);
-            this.Btn3.TabIndex = 30;
+            this.Btn3.TabIndex = 0;
+            this.Btn3.TabStop = false;
             this.Btn3.Text = "3";
             this.Btn3.UseVisualStyleBackColor = false;
             this.Btn3.Click += new System.EventHandler(this.BtnNum_Click);
@@ -712,7 +759,8 @@
             this.BtnEquals.Margin = new System.Windows.Forms.Padding(0);
             this.BtnEquals.Name = "BtnEquals";
             this.BtnEquals.Size = new System.Drawing.Size(80, 55);
-            this.BtnEquals.TabIndex = 35;
+            this.BtnEquals.TabIndex = 0;
+            this.BtnEquals.TabStop = false;
             this.BtnEquals.Text = "=";
             this.BtnEquals.UseVisualStyleBackColor = false;
             this.BtnEquals.Click += new System.EventHandler(this.BtnEquals_Click);
@@ -730,8 +778,10 @@
             this.BtnPM.Margin = new System.Windows.Forms.Padding(0);
             this.BtnPM.Name = "BtnPM";
             this.BtnPM.Size = new System.Drawing.Size(80, 55);
-            this.BtnPM.TabIndex = 32;
+            this.BtnPM.TabIndex = 0;
+            this.BtnPM.TabStop = false;
             this.BtnPM.Text = "±";
+            this.Help.SetToolTip(this.BtnPM, "Меняет знак на противоположный");
             this.BtnPM.UseVisualStyleBackColor = false;
             this.BtnPM.Click += new System.EventHandler(this.BtnPlMn_Click);
             this.BtnPM.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
@@ -748,7 +798,8 @@
             this.Btn0.Margin = new System.Windows.Forms.Padding(0);
             this.Btn0.Name = "Btn0";
             this.Btn0.Size = new System.Drawing.Size(80, 55);
-            this.Btn0.TabIndex = 33;
+            this.Btn0.TabIndex = 0;
+            this.Btn0.TabStop = false;
             this.Btn0.Text = "0";
             this.Btn0.UseVisualStyleBackColor = false;
             this.Btn0.Click += new System.EventHandler(this.BtnNum_Click);
@@ -766,7 +817,8 @@
             this.BtnDesimal.Margin = new System.Windows.Forms.Padding(0);
             this.BtnDesimal.Name = "BtnDesimal";
             this.BtnDesimal.Size = new System.Drawing.Size(80, 55);
-            this.BtnDesimal.TabIndex = 34;
+            this.BtnDesimal.TabIndex = 0;
+            this.BtnDesimal.TabStop = false;
             this.BtnDesimal.Text = ",";
             this.BtnDesimal.UseVisualStyleBackColor = false;
             this.BtnDesimal.Click += new System.EventHandler(this.BtnNum_Click);
@@ -784,7 +836,8 @@
             this.BtnAdd.Margin = new System.Windows.Forms.Padding(0);
             this.BtnAdd.Name = "BtnAdd";
             this.BtnAdd.Size = new System.Drawing.Size(80, 55);
-            this.BtnAdd.TabIndex = 31;
+            this.BtnAdd.TabIndex = 0;
+            this.BtnAdd.TabStop = false;
             this.BtnAdd.Text = "+";
             this.BtnAdd.UseVisualStyleBackColor = false;
             this.BtnAdd.Click += new System.EventHandler(this.BtnMathOperation_Click);
@@ -798,7 +851,7 @@
             this.Mindicate.Location = new System.Drawing.Point(12, 128);
             this.Mindicate.Name = "Mindicate";
             this.Mindicate.Size = new System.Drawing.Size(33, 27);
-            this.Mindicate.TabIndex = 36;
+            this.Mindicate.TabIndex = 0;
             this.Mindicate.Text = "M";
             this.Help.SetToolTip(this.Mindicate, "В памяти есть число");
             this.Mindicate.Visible = false;
@@ -816,7 +869,8 @@
             this.Autor.Name = "Autor";
             this.Autor.ReadOnly = true;
             this.Autor.Size = new System.Drawing.Size(150, 15);
-            this.Autor.TabIndex = 37;
+            this.Autor.TabIndex = 0;
+            this.Autor.TabStop = false;
             this.Autor.Text = "veronika-nika1504@yandex.ru";
             this.Autor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Autor.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
@@ -842,11 +896,11 @@
             this.PanelMenu.Controls.Add(this.FuelConsumptionView);
             this.PanelMenu.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.PanelMenu.ForeColor = System.Drawing.Color.DarkViolet;
-            this.PanelMenu.Location = new System.Drawing.Point(14, 75);
+            this.PanelMenu.Location = new System.Drawing.Point(14, 77);
             this.PanelMenu.Margin = new System.Windows.Forms.Padding(0);
             this.PanelMenu.Name = "PanelMenu";
             this.PanelMenu.Size = new System.Drawing.Size(154, 175);
-            this.PanelMenu.TabIndex = 7;
+            this.PanelMenu.TabIndex = 0;
             this.PanelMenu.Visible = false;
             this.PanelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelMenu_Paint);
             // 
@@ -870,7 +924,7 @@
             this.separatorM1.Margin = new System.Windows.Forms.Padding(12, 7, 3, 5);
             this.separatorM1.Name = "separatorM1";
             this.separatorM1.Size = new System.Drawing.Size(130, 1);
-            this.separatorM1.TabIndex = 704;
+            this.separatorM1.TabIndex = 0;
             this.separatorM1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // NormalView
@@ -882,7 +936,8 @@
             this.NormalView.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.NormalView.Name = "NormalView";
             this.NormalView.Size = new System.Drawing.Size(144, 30);
-            this.NormalView.TabIndex = 705;
+            this.NormalView.TabIndex = 0;
+            this.NormalView.TabStop = false;
             this.NormalView.Text = "Обычный";
             this.NormalView.UseVisualStyleBackColor = false;
             this.NormalView.Click += new System.EventHandler(this.CalculatorTypes_Click);
@@ -896,7 +951,8 @@
             this.EngineeringView.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.EngineeringView.Name = "EngineeringView";
             this.EngineeringView.Size = new System.Drawing.Size(144, 30);
-            this.EngineeringView.TabIndex = 706;
+            this.EngineeringView.TabIndex = 0;
+            this.EngineeringView.TabStop = false;
             this.EngineeringView.Text = "Инженерный";
             this.EngineeringView.UseVisualStyleBackColor = false;
             this.EngineeringView.Click += new System.EventHandler(this.CalculatorTypes_Click);
@@ -910,7 +966,7 @@
             this.separatorM2.Margin = new System.Windows.Forms.Padding(12, 3, 3, 3);
             this.separatorM2.Name = "separatorM2";
             this.separatorM2.Size = new System.Drawing.Size(130, 1);
-            this.separatorM2.TabIndex = 708;
+            this.separatorM2.TabIndex = 0;
             this.separatorM2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UnitConverterView
@@ -922,7 +978,8 @@
             this.UnitConverterView.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.UnitConverterView.Name = "UnitConverterView";
             this.UnitConverterView.Size = new System.Drawing.Size(144, 30);
-            this.UnitConverterView.TabIndex = 709;
+            this.UnitConverterView.TabIndex = 0;
+            this.UnitConverterView.TabStop = false;
             this.UnitConverterView.Text = "Конвертер величин";
             this.UnitConverterView.UseVisualStyleBackColor = false;
             this.UnitConverterView.Click += new System.EventHandler(this.CalculatorTypes_Click);
@@ -936,16 +993,36 @@
             this.FuelConsumptionView.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.FuelConsumptionView.Name = "FuelConsumptionView";
             this.FuelConsumptionView.Size = new System.Drawing.Size(144, 30);
-            this.FuelConsumptionView.TabIndex = 710;
+            this.FuelConsumptionView.TabIndex = 0;
+            this.FuelConsumptionView.TabStop = false;
             this.FuelConsumptionView.Text = "Расход топлива";
             this.FuelConsumptionView.UseVisualStyleBackColor = false;
             this.FuelConsumptionView.Click += new System.EventHandler(this.CalculatorTypes_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.BackColor = System.Drawing.Color.PowderBlue;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Gadugi", 7.5F);
+            this.textBox1.ForeColor = System.Drawing.Color.DarkViolet;
+            this.textBox1.Location = new System.Drawing.Point(0, 555);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(97, 15);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.TabStop = false;
+            this.textBox1.Text = "Версия 1.11";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // FormCalc
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.PowderBlue;
             this.ClientSize = new System.Drawing.Size(350, 570);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.PanelMenu);
             this.Controls.Add(this.Autor);
             this.Controls.Add(this.Mindicate);
@@ -987,12 +1064,13 @@
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "FormCalc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCalc";
             this.Load += new System.EventHandler(this.FormCalc_Load);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KBPress);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormCalc_MouseDown);
+            this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.KyDown);
             this.PnlTitle.ResumeLayout(false);
             this.PnlHistory.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -1039,7 +1117,6 @@
         private System.Windows.Forms.Button BtnMultiply;
         private System.Windows.Forms.Button Btn1;
         private System.Windows.Forms.Button Btn2;
-        private System.Windows.Forms.Button Btn3;
         private System.Windows.Forms.Button BtnEquals;
         private System.Windows.Forms.Button BtnPM;
         private System.Windows.Forms.Button Btn0;
@@ -1048,14 +1125,16 @@
         private System.Windows.Forms.Label Mindicate;
         private System.Windows.Forms.TextBox Autor;
         private System.Windows.Forms.ToolTip Help;
-        private System.Windows.Forms.Label CalcMenuView;
         private System.Windows.Forms.FlowLayoutPanel PanelMenu;
+        private System.Windows.Forms.Label CalcMenuView;
         private System.Windows.Forms.Label separatorM1;
         private System.Windows.Forms.Button NormalView;
         private System.Windows.Forms.Button EngineeringView;
         private System.Windows.Forms.Label separatorM2;
         private System.Windows.Forms.Button UnitConverterView;
         private System.Windows.Forms.Button FuelConsumptionView;
+        private System.Windows.Forms.Button Btn3;
+        private TextBox textBox1;
     }
 }
 
